@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'active_record'
+require_relative '../spec/config/db_config'
+require_relative '../spec/config/schema'
+require_relative '../spec/config/models'
+require_relative '../spec/config/seeds'
+
+require 'irb'
+IRB.start
