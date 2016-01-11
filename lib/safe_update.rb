@@ -5,6 +5,7 @@ module SafeUpdate
   end
 
   def belongs_to(name, options = {})
+
     return_status = super(name, options)
     
     if options[:safe_update]
@@ -18,6 +19,7 @@ module SafeUpdate
 
   def belongs_to_generator(attr_name)
     define_method(attr_name) do
+
       attribute = super()
 
       attribute.instance_variable_set(:@_caller, self)

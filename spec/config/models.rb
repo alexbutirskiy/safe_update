@@ -5,13 +5,16 @@ class Address < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
-  belongs_to :address
+  extend SafeUpdate
+  belongs_to :address, safe_update: true
 end
 
 class CreditCard < ActiveRecord::Base
-  belongs_to :address
+  extend SafeUpdate
+  belongs_to :address, safe_update: true
 end
 
 class User < ActiveRecord::Base
-  belongs_to :address
+  extend SafeUpdate
+  belongs_to :address, safe_update: true
 end

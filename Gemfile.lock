@@ -20,6 +20,8 @@ GEM
     coderay (1.1.0)
     database_cleaner (1.5.1)
     diff-lcs (1.2.5)
+    faker (1.6.1)
+      i18n (~> 0.5)
     ffi (1.9.10)
     formatador (0.2.5)
     guard (2.13.0)
@@ -84,6 +86,7 @@ DEPENDENCIES
   activerecord (~> 4.2)
   byebug
   database_cleaner
+  faker
   guard-rspec
   rack
   rspec

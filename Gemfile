@@ -7,3 +7,4 @@ gem 'database_cleaner'
 gem 'rack'
 gem 'byebug'
 gem 'guard-rspec', require: false
+gem 'faker'

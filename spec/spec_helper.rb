@@ -9,6 +9,7 @@ require './spec/config/db_config'
 require './spec/config/schema'
 #require './spec/config/models'
 require './lib/safe_update'
+require 'faker'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
