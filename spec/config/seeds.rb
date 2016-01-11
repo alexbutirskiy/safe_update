@@ -1,6 +1,6 @@
 Address.create!([
-  { city: "Dnipro", street: nil },
-  { city: "Kyiv", street: nil }
+  { city: 'Dnipro', street: nil },
+  { city: 'Kyiv', street: nil }
 ])
 
 CreditCard.create!([
@@ -9,11 +9,11 @@ CreditCard.create!([
 ])
 
 Order.create!([
-  { name: "First order", address_id: 1 },
-  { name: "Second order", address_id: 2 }
+  { name: 'First order', address_id: 1 },
+  { name: 'Second order', address_id: 2 }
 ])
 
 User.create!([
-  { name: "Alex", address_id: 1 },
-  { name: "Olha", address_id: 1 }
+  { name: 'Alex', address_id: 1 },
+  { name: 'Olha', address_id: 1 }
 ])
