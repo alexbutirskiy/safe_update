@@ -44,6 +44,12 @@ end
 2.2.0 :009 > Order.last.address
  => #<Address id: 3, city: "Dnipro", street: "Pushkina", created_at: "2016-01-11 16:29:59", updated_at: "2016-01-11 16:29:59"> 
 ```
+
+It'spossible to play with [simple model](https://github.com/alexbutirskiy/safe_update/blob/master/spec/config/models.rb), just type:
+```
+$ bin/irb
+```
+
 ###TODO
 * Delete records without links
 * Redefine ```#has_many``` class method to disable direct record changing (```Address.find(1).update```)
