@@ -1,7 +1,13 @@
 module SafeUpdate
   def self.extended(*)
-    ActiveRecord::Associations::Builder::BelongsTo
-      .send(:define_method, :valid_options) { super() + [:safe_update] }
+    ActiveRecord::Associations::Builder::Association.class_eval do
+      unless method_defined? :valid_options_original
+        alias :valid_options_original :valid_options
+        def valid_options
+          valid_options_original + [:safe_update]
+        end
+      end
+    end
   end
 
   def belongs_to(name, options = {})
@@ -23,9 +29,8 @@ module SafeUpdate
       attribute.define_singleton_method(:_update_record) do
         return(super()) if changes.empty?
 
-        new_record = self.class.new(attributes)
-        new_record.id = nil
-        new_record.updated_at = nil
+        new_record = self.class.new(
+          attributes.except('id', 'updated_at'))
 
         return(false) unless new_record.send(:_create_record)
 
