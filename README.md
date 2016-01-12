@@ -4,10 +4,7 @@ An ActiveReccord extender
 ## Usage
 ### Models
 ```ruby
-class Address < ActiveRecord::Base
-  has_many :users
-  has_many :orders
-end
+require 'safe_update'
 
 class User < ActiveRecord::Base
   extend SafeUpdate
@@ -17,6 +14,11 @@ end
 class Order < ActiveRecord::Base
   extend SafeUpdate
   belongs_to :address, safe_update: true
+end
+
+class Address < ActiveRecord::Base
+  has_many :users
+  has_many :orders
 end
 ```
 ### Initializtion
